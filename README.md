@@ -1,177 +1,277 @@
-FedEx Logistic Performance Analysis
+🚚 FedEx Logistic Performance Analysis
 
-About This Project
+This project delivers an in-depth analysis of FedEx’s logistics performance using a supply chain dataset. It uncovers actionable insights on shipping costs, delivery delays, and operational efficiency to help FedEx optimize its processes, reduce costs, and boost profitability.
 
-This project analyzes FedEx’s logistics performance using a supply chain dataset. It helps find the best products, vendors, and regions, and fixes problems to save money, manage stock better, and increase profits.
 
-Dataset
 
-The dataset has details about FedEx shipments:
+📁 Project Overview
 
+The goal of this project is to analyze FedEx’s supply chain data and provide insights to improve logistics operations. It explores key metrics like shipping costs, delivery delays, fulfillment methods, and regional performance to support data-driven decisions.
 
+What We Analyzed:
 
 
 
-ID: Unique number for each shipment.
 
 
+Shipping costs and methods (Air, Ocean, Truck)
 
-Country: Destination (e.g., South Africa, Nigeria).
 
 
+Delivery delays and their impact
 
-Shipment Mode: Transport method (e.g., Air, Ocean, Truck).
 
 
+Fulfillment methods (From RDC, Direct Drop)
 
-Fulfill Via: Fulfillment method (e.g., From RDC, Direct Drop).
 
 
+Vendor performance and costs
 
-Line Item Value: Item cost in USD.
 
 
+Regional shipment patterns
 
-Cleaned_Freight_Cost: Shipping cost in USD.
 
 
+📊 Analysis & Visualizations
 
-Total Cost (USD): Total cost (items + shipping).
+We created several visualizations in Python to explore the data and find insights.
 
+1. 📌 Overview Analysis
 
+Key Metrics:
 
-Delivery Delay (days): Days late or early.
 
 
 
-Line Item Insurance (USD): Insurance cost.
 
+Total Shipments
 
 
-Vendor: Supplier (e.g., Aurobindo, Cipla).
 
+Total Shipping Cost (Cleaned_Freight_Cost)
 
 
-Plus columns for weight, dates, and product details.
 
-Goals
+Total Cost (Total Cost (USD))
 
 
 
+Average Delivery Delay (Delivery Delay (days))
 
 
-Find top products, vendors, and regions.
 
+Total Insurance Cost (Line Item Insurance (USD))
 
+Visuals & Features:
 
-Reduce shipping costs.
 
 
 
-Manage stock better.
 
+Heatmap: Shows how costs, weights, and delays are connected (e.g., Line Item Value and Total Cost (USD) have a strong 0.9 correlation).
 
 
-Fix delays.
 
+Bar Plots: Breakdown of costs by country, vendor, and fulfillment method.
 
 
-Increase profits.
 
-What We Did
+Dynamic Filtering: Analyze by Country, Shipment Mode, and Vendor.
 
-We used Python to analyze the data and made charts:
 
 
+Insights Highlight: Top regions (South Africa, Nigeria) and costly vendors (Aurobindo).
 
+2. ⏰ Delivery & Cost Analysis
 
+Key Metrics:
 
-Heatmap: To see how costs, weights, and delays connect.
 
 
 
-Pair Plot: To compare costs and delays by shipment mode.
 
+Average Shipping Cost by Shipment Mode
 
 
-Bar Plots: To check costs by country, vendor, and fulfillment method.
 
-Key Findings
+Average Delay by Shipment Mode
 
 
 
+Cost per Kilogram (Freight Cost per Kilogram (USD/kg))
 
+Visuals:
 
-South Africa and Nigeria have the most shipments.
 
 
 
-Air shipping costs more ($5000) than Ocean ($2000).
 
+Pair Plot: Compares costs, delays, and weights, with colors for Shipment Mode (Air, Ocean, Truck).
 
 
-Heavy shipments cost more but are cheaper per kg.
 
+Pie Chart: Shows Fulfill Via usage (60% From RDC, 40% Direct Drop).
 
 
-From RDC (warehouse) is used 60% of the time and is cheaper.
 
+Bar Plot: Insurance costs by country and shipping method.
 
+Features:
 
-Aurobindo (vendor) has high costs (40% of total).
 
 
 
-Delays don’t affect costs much, but Ocean has more delays (over 20 days).
 
-How to Use
+Darker colors for opposite correlations (e.g., Cleaned_Weight vs Freight Cost per Kilogram at -0.4).
 
 
 
+Legend on the right for easy understanding.
 
+3. 📂 Detailed Insights
 
-Clone the repository:
+
+
+
+
+Grid View: Table with all shipment details (e.g., ID, Country, Vendor, Line Item Value).
+
+
+
+Drill-Down: Filter by Product Group (e.g., ARV), Vendor, or Country.
+
+
+
+Export Option: Save filtered data for deeper analysis.
+
+
+
+🛠 Tools & Technologies Used
+
+
+
+
+
+Python: For coding and analysis
+
+
+
+Pandas: To manage the dataset
+
+
+
+Seaborn & Matplotlib: For creating charts
+
+
+
+Jupyter Notebook: To run and display the analysis
+
+
+
+Data Cleaning: Handled missing values and inconsistencies (e.g., Cleaned_Freight_Cost, Cleaned_Weight)
+
+
+
+📈 Key Insights
+
+
+
+
+
+Top Regions: South Africa and Nigeria have the most shipments—focus on improving logistics there.
+
+
+
+Shipping Costs: Air shipping costs the most ($5000 average), while Ocean is cheaper ($2000). Use Ocean more to save money.
+
+
+
+Fulfillment Efficiency: From RDC (warehouse) is used 60% of the time and is cheaper than Direct Drop.
+
+
+
+Vendor Costs: Aurobindo accounts for 40% of total costs—negotiate better prices.
+
+
+
+Delivery Delays: Ocean shipments have more delays (over 20 days), but delays don’t impact costs much.
+
+
+
+Cost Efficiency: Heavier shipments (Cleaned_Weight) have lower cost per kg—combine shipments to save more.
+
+These insights help FedEx reduce shipping costs, manage stock better, and improve delivery times.
+
+
+
+📁 Project Files
+
+
+
+
+
+fedex_logistic_analysis.ipynb: Jupyter Notebook with all code and charts
+
+
+
+dataset.csv: Supply chain dataset
+
+
+
+README.md: Project documentation
+
+
+
+Saved charts (e.g., correlation_heatmap_updated.png, pair_plot_shipment_mode_updated.png)
+
+
+
+🚀 How to Use
+
+
+
+
+
+Clone this repository:
 
 git clone <repository-url>
 
 
 
-Install libraries:
+Install the required libraries:
 
 pip install pandas seaborn matplotlib numpy
 
 
 
-Run the code in Jupyter Notebook to see the charts.
+Open the Jupyter Notebook:
+
+jupyter notebook fedex_logistic_analysis.ipynb
 
 
 
-Check saved charts (e.g., correlation_heatmap_updated.png).
-
-Tools
+Run the cells to see the charts and insights.
 
 
 
-
-
-Python
-
-
-
-Pandas
+Explore the saved charts for more details.
 
 
 
-Seaborn
+🌟 Why This Project Matters
+
+This project helps FedEx understand its logistics performance and make smart decisions. By focusing on cost-saving methods (like Ocean shipping), improving vendor deals, and fixing delays, FedEx can save money, manage stock better, and increase profits.
 
 
 
-Matplotlib
+🧠 Inspiration
+
+This project was developed as part of a supply chain analysis study on May 28, 2025. It draws inspiration from real-world logistics challenges faced by companies like FedEx and aims to provide practical solutions using data analysis.
 
 
 
-Jupyter Notebook
+👨‍💻 Author
 
-Author
-
-Created on May 28, 2025, for FedEx logistics analysis.
+Created by [Your Name] for FedEx logistics performance analysis. Feel free to contribute or reach out for feedback!
